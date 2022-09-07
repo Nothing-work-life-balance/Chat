@@ -1,5 +1,3 @@
-package code;
-
 import java.net.*;
 import java.io.*;
 class SenderThread extends Thread {
@@ -11,6 +9,7 @@ class SenderThread extends Thread {
         this.name = name;
         this.name += "-" + socket.getLocalAddress().getHostAddress();
         this.chat = chat;
+        chat.myname = this.name;
     }
     public void run() {
         try {

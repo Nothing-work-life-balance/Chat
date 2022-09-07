@@ -1,4 +1,3 @@
-package code;
 
 import java.net.*;
 class ClientExample4 {
@@ -44,6 +43,3 @@ class ClientExample4 {
         }
     }
 }
-	
-    
-

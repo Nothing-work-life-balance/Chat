@@ -1,5 +1,3 @@
-package code;
-
 //채팅방 기록 저장
 import java.io.File;
 import java.io.FileOutputStream;

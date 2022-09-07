@@ -1,5 +1,3 @@
-package code;
-
 
 import java.awt.EventQueue;
 
@@ -80,7 +78,6 @@ public class ChatName {
 		panel.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setText("닉네임 입력");
 		textField.setFont(new Font("굴림", Font.PLAIN, 30));
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setBackground(new Color(255, 255, 255));
@@ -90,7 +87,7 @@ public class ChatName {
 		
 		JButton btnNewButton = new JButton("돌아가기");
 		btnNewButton.setFont(new Font("굴림", Font.PLAIN, 30));
-		btnNewButton.setBounds(12, 10, 155, 48);
+		btnNewButton.setBounds(12, 10, 183, 48);
 		panel.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			@Override
@@ -105,7 +102,7 @@ public class ChatName {
 		
 		JButton btnNewButton_1 = new JButton("입장하기");
 		btnNewButton_1.setFont(new Font("굴림", Font.PLAIN, 30));
-		btnNewButton_1.setBounds(725, 460, 155, 69);
+		btnNewButton_1.setBounds(704, 460, 176, 69);
 		panel.add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			

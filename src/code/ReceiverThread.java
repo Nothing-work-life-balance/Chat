@@ -1,4 +1,4 @@
-package code;
+//package tcp.chat.multi;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,10 +9,13 @@ import java.util.ArrayList;
 class ReceiverThread extends Thread {
 	Socket socket;
 	ChatMain chat;
-
+	ChatLog cl;
+	Block bl;
 	ReceiverThread(Socket socket, ChatMain chat) {
 		this.socket = socket;
 		this.chat = chat;
+		this.cl = new ChatLog();
+		this.bl = new Block();
 	}
 
 	public void run() {
@@ -21,7 +24,13 @@ class ReceiverThread extends Thread {
 			while (true) {
 				
 				// �����κ��� ���ŵ� �޽����� ����ͷ� ���
+				
 				String str = reader.readLine();
+				String[] tmp1 = str.split(">");
+				if(bl.check(tmp1[0])) {
+					chat.textArea_1.append("");
+					continue;
+				}
 				if (str == null)
 					break;
 				if(str.contains("NameList ")) {
@@ -29,6 +38,7 @@ class ReceiverThread extends Thread {
 					listAppend(tmp);
 				} else {
 					System.out.println(str);
+					cl.save(str);
 					chat.textArea_1.append(str + "\n");
 				}
 			}
@@ -37,7 +47,7 @@ class ReceiverThread extends Thread {
 		}
 	}
 	
-	// 채팅 인원 리스트
+	//채팅 인원 리스트
 	private void listAppend(String[] tmp) {
 		ArrayList<String> args = new ArrayList<String>();
 		int i = 0;

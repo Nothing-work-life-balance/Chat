@@ -1,24 +1,17 @@
-package code;
-
 import java.util.ArrayList;
 public class BlackList {
 	// server java file
 	// 강퇴기능 클래스 => 영구차단
 	
-	private ArrayList<User> blackList;
-	
-	//서버에서 BlackList 생성
-	public BlackList() {
-		blackList = new ArrayList<User>();
-	}
+	private static ArrayList<User> blackList = new ArrayList<User>();
 	
 	//블랙리스트 추가
-	public void appned(User user) {
+	synchronized public void appned(User user) {
 		blackList.add(user);
 	}
 	
 	//blackList 삭제
-	public void delete(User user) {
+	synchronized public void delete(User user) {
 		blackList.remove(user);
 	}
 	
